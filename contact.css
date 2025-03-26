@@ -1,74 +1,165 @@
-.header{
-    display: flex;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    display: flex;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Mukta Mahee", arial, sans-serif;
+    /* line-height: 1.8; */
+}
+
+.first-header{
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;  /* Make it span the entire width */
-    /* background: rgba(0, 0, 0, 0.6); Optional: Semi-transparent effect */
-    color: white;
-}
-.header1{
-    width: 30%;
-    height: 45px;
-
-    
-}
-.logo{
-    font-size: 30px;
-    color: #fff;
-    font-weight: bold;
-    line-height: 1;
-    font-family: "Abril Fatface", times, serif;
-    padding-left: 15px;
-}
-.header2{
-    width: 70%;
-    height: 45px;
-    
-    display: flex-end;
-}
-.menu{
-    padding-right: 10px;
-    display: flex;
-    flex-direction: row-reverse;
-}
-.section1{
-    background-image: url(section2.pic.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
     width: 100%;
-    
+    padding: 60px 0;
+    z-index: 2;
+    display: flex;
 }
-.writting{
-    width: 800px;
-    height: 181px;
-    border: 2px solid transparent;
-    top: 100px;
-    position: relative;
-    /* left: auto; */
-    left: 250px;
-    top: 150px;
-    text-align:  center;
+
+.first-logo{
+    width: 40%;
+    padding: 0 15px;
 }
-.writting h2{
+
+.first-logo a{
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+}
+
+.menu-toggle{
+    width: 60%;
+    text-align: end;
+    padding: 0 15px;
+    font-size: 50px;
+}
+
+#first-navbar{
+    position: fixed;
+    background-color: white;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.list-menu li{
+    list-style: none;
+   font-size: 30px;
+   font-weight: bold;
+   font-family: 'Playfair Display', serif;
+   margin-bottom: 15px;
+}
+
+.list-menu a{
+    text-decoration: none;
+    color: black;
+}
+
+.list-menu :hover{
+    color: #65C0BA;
+}
+
+#close-menu{
+    position: absolute;
+    top: 40px;
+    right: 45px;
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+}
+
+#menu{
+    cursor: pointer;
+}
+
+.first-main{
+    background-image: url(home.mainpic.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.first-main::before{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* overflow: hidden; */
+}
+
+.text-center{
+    justify-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.main-text{
+    text-align: center;
+}
+
+.main-text h1{
     font-size: 80px;
-    font-family: "Abril Fatface", times, serif;
+    font-family: 'Playfair Display', times , serif;
     color: #fff;
-    line-height: 1;
     font-weight: bold;
+    margin-bottom: 25px;
 }
-.writting p{
-    font-size: 15px;
-    font-family: "Abril Fatface", times, serif;
+
+.simple-text{
+    font-size: 25px;
     color: #fff;
-    margin-top: -50px;
+    margin-bottom: 49px;
 }
+@media (max-width: 768px) {
+    .first-header {
+        padding: 20px;
+    }
+
+    .first-logo a {
+        font-size: 24px;
+    }
+
+    .menu-toggle {
+        font-size: 40px;
+    }
+
+    .main-text h1 {
+        font-size: 50px;
+    }
+
+    .simple-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-text h1 {
+        font-size: 40px;
+    }
+
+    .simple-text {
+        font-size: 16px;
+    }
+
+    .list-menu li {
+        font-size: 24px;
+    }
+}
+
 .contact-section{
     padding: 126px 0;
     background-color: #fafafa;
@@ -129,6 +220,41 @@
     font-weight: bold;
     margin-bottom: 30px;
 }
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        padding: 0 1.5rem;
+        gap: 2rem;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-address {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+    }
+
+    .contact-address p {
+        font-size: 20px;
+    }
+}
+
 
 .review-section{
     /* background-color: #FAFAFA; */
@@ -165,6 +291,30 @@
     margin-bottom: 15px;
     line-height: 1.5;
 }
+@media (max-width: 768px) {
+    .review-section {
+        padding: 60px 0;
+    }
+    .review {
+        flex-direction: column;
+        align-items: center;
+    }
+    .review-cards {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-section {
+        padding: 40px 0;
+    }
+    .review-cards p {
+        font-size: 16px;
+    }
+    .review-cards img {
+        width: 60px;
+    }
+}
 
 .footer-section{
     padding: 126px 28px;
@@ -176,19 +326,19 @@
     justify-content: center;
 }
 
-.ftcards{
+.footercards{
     width: 270px;
     padding: 0 15px;
 }
 
-.ftcards h3{
+.footercards h3{
     color: #ffffff;
     margin-bottom: 25px;
     font-weight: bold;
     font-family: 'Playfair Display', times , serif;
 }
 
-.ftcards li{
+.footercards li{
     color: #ffffffb3;
     margin-bottom: 18px;
     text-decoration: none;
@@ -204,7 +354,7 @@
     color: #ffffffb3;
 }
 
-.ftcards p{
+.footercards p{
     margin-bottom: 15px;
     line-height: 1.8;
 }
@@ -226,10 +376,38 @@
     color: #6C757D;
 }
 
-.ft-icons{
+.footer-icons{
     margin-top: 10px;
 }
 
-.ft-icons a{
+.footer-icons a{
     padding: 10px;
+}
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 80px 15px;
+    }
+    .footer-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footercards {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        padding: 60px 10px;
+    }
+    .footercards h3 {
+        font-size: 18px;
+    }
+    .footercards li, .footercards p {
+        font-size: 14px;
+    }
+    .mailbtn, .mailsubs {
+        height: 40px;
+    }
 }
