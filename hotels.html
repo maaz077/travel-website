@@ -21,7 +21,7 @@
                             <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="hotels.html">Hotels</a>
+                            <a href="hotel.html">Hotels</a>
                         </li>
                         <li>
                             <a href="about.html">About Us</a>
@@ -88,32 +88,47 @@
     </section>
 
     <section id="family-section">
-
         <div class="room">
-            <div>
-                <img src="slider1.pic.jpg" alt="pic">
-            </div>
-           <div class="section-text">
+          <div class="room-image">
+            <img src="slider1.pic.jpg" alt="pic" />
+          </div>
+          <div class="section-text">
             <h2>Family Room</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-            <a>Learn More</a>
-            </div>
+            <p>
+              Far far away, behind the word mountains, far from the countries Vokalia
+              and Consonantia, there live the blind texts. Separated they live in
+              Bookmarksgrove right at the coast of the Semantics, a large language
+              ocean.
+            </p>
+            <p>
+              A small river named Duden flows by their place and supplies it with the
+              necessary regelialia.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
         </div>
-
-        <div class="room">
-            
-           <div class="section-text">
+      
+        <div class="room reverse">
+          <div class="section-text">
             <h2>Presidential Room</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-            <a>Learn More</a>
-           </div>
-           <img src="slider2.pic.jpg" alt="pic">
+            <p>
+              Far far away, behind the word mountains, far from the countries Vokalia
+              and Consonantia, there live the blind texts. Separated they live in
+              Bookmarksgrove right at the coast of the Semantics, a large language
+              ocean.
+            </p>
+            <p>
+              A small river named Duden flows by their place and supplies it with the
+              necessary regelialia.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="room-image">
+            <img src="slider2.pic.jpg" alt="pic" />
+          </div>
         </div>
-
-    </section>
-
+      </section>
+      
     <section class="slider-section">
         <div class="slider-text">
             <div class="text">
@@ -132,6 +147,35 @@
             <i class="fa-solid fa-arrow-right"></i>
         </div>
     </section>
+    <script>
+        const images = document.querySelectorAll(".slider-imgs img");
+        const prevBtn = document.querySelector(".slider-imgs .fa-arrow-left");
+        const nextBtn = document.querySelector(".slider-imgs .fa-arrow-right");
+    
+        let current = 0;
+    
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove("active");
+                if (i === index) {
+                    img.classList.add("active");
+                }
+            });
+        }
+    
+        showImage(current);
+    
+        nextBtn.addEventListener("click", () => {
+            current = (current + 1) % images.length;
+            showImage(current);
+        });
+    
+        prevBtn.addEventListener("click", () => {
+            current = (current - 1 + images.length) % images.length;
+            showImage(current);
+        });
+    </script>
+    
 
     <section class="blog-section">
         <div class="blog-text">
