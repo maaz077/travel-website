@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -130,29 +132,58 @@
             </div>
         </div>
     </section>
-
     <section class="slider-section">
         <div class="slider-text">
-            <div class="text">
-                <h2>International Tour Management.</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                    the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                    language ocean.</p>
-            </div>
+          <div class="text">
+            <h2>International Tour Management.</h2>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts. Separated they
+              live in Bookmarksgrove right at the coast of the Semantics, a large
+              language ocean.
+            </p>
+          </div>
         </div>
-        <div class="slider-pics">
-            <img src="slider1.pic.jpg">
+        <div class="slider-wrapper">
+          <div class="slider-track">
+            <img src="slider1.pic.jpg" alt="">
             <img src="slider2.pic.jpg" alt="">
-            <img src="slider3.pic.jpg">
-            <img src="slider1.pic.jpg">
-            <img src="slider2.pic.jpg">
-            <img src="slider3.pic.jpg">
-            <i class="fa-solid fa-arrow-left"></i>
-            <i class="fa-solid fa-arrow-right"></i>
+            <img src="slider3.pic.jpg" alt="">
+            <img src="slider1.pic.jpg" alt="">
+            <img src="slider2.pic.jpg" alt="">
+            <img src="slider3.pic.jpg" alt="">
+          </div>
+          <button class="slider-btn prev"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="slider-btn next"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-    </section>
-
-    <section class="blog-section">
+      </section>
+      <script>
+        const track = document.querySelector('.slider-track');
+        const nextBtn = document.querySelector('.slider-btn.next');
+        const prevBtn = document.querySelector('.slider-btn.prev');
+        const slides = document.querySelectorAll('.slider-track img');
+        let index = 0;
+      
+        function updateSlider() {
+          const slideWidth = slides[0].clientWidth;
+          track.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+      
+        nextBtn.addEventListener('click', () => {
+          index = (index + 1) % slides.length;
+          updateSlider();
+        });
+      
+        prevBtn.addEventListener('click', () => {
+          index = (index - 1 + slides.length) % slides.length;
+          updateSlider();
+        });
+      
+        window.addEventListener('resize', updateSlider);
+      </script>
+      
+      
+      <section class="blog-section">
         <div class="blog-text">
             <div class="text">
                 <h2>Recent Blog Post</h2>
@@ -191,6 +222,9 @@
             </div>
         </div>
     </section>
+    
+
+    
 
     <section class="review-section">
         <div class="review-text">
